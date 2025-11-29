@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-2 GLOBAL BUSINESS sarl</title>
+<meta name="description" content="K-2 GLOBAL BUSINESS sarl - Transformation de la patate douce et produits agroalimentaires innovants. Découvrez notre projet COLIBRI et notre fondateur.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary:#0f172a;
+  --secondary:#0ea5a4;
+  --accent:#f97316;
+  --gold:#FFD700;
+  --bg-panel:#1b2545;
+  --text-light:#e6eef6;
+  --radius:14px;
+  --shadow:0 4px 20px rgba(0,0,0,0.4);
+  font-family:'Inter', sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--primary); color:var(--text-light); line-height:1.6;}
+
+/* ================= HEADER ================= */
+header{
+  position: fixed;
+  top:0; left:0;
+  width:100%;
+  height:250px;
+  background: linear-gradient(75deg,var(--secondary),var(--accent));
+  box-shadow: var(--shadow);
+  z-index:900;
+  display: flex;
+  align-items: center;
+  border: 2px solid black; /* encadrement global */
+}
+
+.header-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.header-center{
+  text-align:center;
+  flex:1;
+}
+.header-title{
+  font-size:65px;
+  font-weight:900;
+  color:var(--gold);
+  text-shadow:3px 5px 0 black;
+  margin:0;
+  border: 3px solid black; /* encadrement titre */
+  padding: 5px 15px;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.subtitle{
+  font-size:20px;
+  font-weight:bold;
+  text-transform:uppercase;
+  color:#fff;
+  margin:5px 0 10px 0;
+}
+
+nav{
+  margin-top:10px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap: wrap;
+}
+nav a{
+  background:#b71c1c;
+  padding:8px 16px;
+  border-radius:8px;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  border:1px solid var(--gold);
+  transition:0.3s;
+}
+nav a:hover{
+  background:#ff4444;
+  color:black;
+}
+
+.header-img{
+  width:300px;
+  height:300px;
+  object-fit:contain;
+}
+
+/* ================= MAIN & ABOUT ================= */
+main{
+  margin-top:250px; /* espace pour header fixe */
+}
+
+/* About + Fondateur */
+section.about{
+  display: flex;
+  justify-content: flex-start;
+  gap:10px;
+  width: 100%;
+  padding:20px;
+  flex-wrap: wrap;
+}
+
+/* Colonnes principales */
+.about-column, .about-founder{
+  flex:1;
+  min-width:0;
+  padding:20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display:flex;
+  flex-direction: column;
+}
+
+/* Couleurs colonnes */
+.about-column:nth-child(1){ background:#ffe4b5; color:#0f172a; }
+.about-column:nth-child(2){ background:#add8e6; color:#0f172a; }
+.about-column:nth-child(3){ background:#ffffff; color:#0f172a; display:flex; flex-direction:column; justify-content:space-between; align-items:center; }
+
+/* Colonne Fondateur */
+.about-founder{
+  background: linear-gradient(120deg,#1f2845,#163152);
+  color:var(--gold);
+  align-items:center;
+}
+
+.about-founder img{
+  width:200px;
+  border-radius:16px;
+  margin-bottom:15px;
+  box-shadow: var(--shadow);
+}
+
+.about-column h2, .about-founder h2{
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.about-column p, .about-column ul li, .about-founder p{
+  font-size:16px;
+  margin-bottom:12px;
+}
+
+/* ================= INNOVATION ================= */
+section.innovation{
+  background:var(--bg-panel);
+  padding:20px 40px;
+  text-align:center;
+}
+.innovation h2{font-size:36px; color:var(--gold); margin-bottom:20px;}
+.innovation-cards{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.card{
+  background:var(--primary);
+  border-radius:var(--radius);
+  padding:20px;
+  width:280px;
+  box-shadow:var(--shadow);
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 25px rgba(255,215,0,0.5);
+}
+.card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+.card h3{
+  font-size:20px;
+  color:var(--secondary);
+  margin-bottom:10px;
+}
+.card p{font-size:14px;}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#071035;
+  font-size:14px;
+  color:#aaa;
+}
+
+/* ================= RESPONSIVE ================= */
+img{
+  max-width:100%;
+  height:auto;
+}
+
+@media screen and (max-width: 1200px) {
+  section.about{
+    flex-wrap: wrap;
+  }
+  .about-column, .about-founder{
+    flex:1 1 45%;
+    min-width: 250px;
+    margin-bottom: 15px;
+  }
+  .header-img{
+    width:150px;
+    height:150px;
+  }
+  .header-title{
+    font-size:45px;
+    padding: 5px 10px;
+  }
+  .subtitle{
+    font-size:16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-wrapper{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  nav{
+    flex-wrap: wrap;
+  }
+  section.about{
+    flex-direction: column;
+    gap:15px;
+  }
+  .about-column, .about-founder{
+    width:100%;
+    margin-bottom:10px;
+  }
+  .header-title{
+    font-size:32px;
+  }
+  .header-img{
+    width:120px;
+    height:120px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .header-title{
+    font-size:24px;
+  }
+  .subtitle{
+    font-size:14px;
+  }
+  nav a{
+    font-size:12px;
+    padding:6px 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-wrapper">
+    <img src="images/Drapeau_RDC.gif" alt="Drapeau RDC" class="header-img">
+    <div class="header-center">
+      <h1 class="header-title">K-2 GLOBAL BUSINESS sarl</h1>
+      <p class="subtitle">RESTAURATION · AGRO-ALIMENTAIRE · IT NUMÉRIC</p>
+      <nav>
+        <a href="#about">À propos</a>
+        <a href="#innovation">Produits</a>
+        <a href="#founder">Fondateur</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <img src="images/logo k-2.png" alt="Logo K-2" class="header-img">
+  </div>
+</header>
+
+<main>
+
+<!-- ABOUT + FONDATEUR -->
+<section id="about" class="about">
+
+  <!-- Colonne 1 -->
+  <div class="about-column">
+    <h2>Le Projet COLIBRI</h2>
+    <p>COLIBRI est un projet agroalimentaire innovant visant à transformer la patate douce locale en produits sains et accessibles, réduisant la faim et valorisant les agriculteurs du Congo-Central.</p>
+    <ul>
+      <li>Phase 1 : Frites blanchies, séchées, emballées (200 g – 2 kg) pour consommation familiale et rapide.</li>
+      <li>Phase 2 : Chips COLIBRI Kids aromatisées pour enfants et jeunes consommateurs.</li>
+      <li>Produits hygiéniques, nutritifs et faciles à conserver.</li>
+    </ul>
+  </div>
+
+  <!-- Colonne 2 -->
+  <div class="about-column">
+    <h2>Nos Objectifs</h2>
+    <ul>
+      <li>Réduire la faim grâce à des produits accessibles</li>
+      <li>Créer des emplois directs et indirects</li>
+      <li>Valoriser la patate douce locale</li>
+      <li>Développer une marque innovante et reconnue</li>
+      <li>Promouvoir une alimentation saine et durable</li>
+    </ul>
+  </div>
+
+  <!-- Colonne 3 : Légende du Colibri -->
+  <div class="about-column">
+   <h2>L'Exploit du Colibri</h2>
+   <img src="images/colibri2.gif" alt="Colibri" style="max-width:100%; width:120px; height:auto; margin-bottom:15px;">
+   <p style="text-align:center; line-height:1.5;">
+      “Comme dans la légende du colibri qui, malgré sa petite taille, décide d’agir pour éteindre l’incendie en disant : « Je fais ma part »,
+      le Projet COLIBRI se veut une contribution déterminante dans la lutte contre la faim et la crise alimentaire en RDC.
+      En transformant la patate douce locale en produits sains, accessibles et durables, nous faisons notre part pour nourrir la population, créer des emplois et valoriser nos ressources.”
+    </p>
+  </div>
+
+  <!-- Colonne Fondateur -->
+  <div class="about-founder" id="founder">
+    <img src="images/kasquin.jpg" alt="Ananias Kasanda">
+    <h2>Ananias KASANDA TSHIPEPELE</h2>
+    <p>Fondateur et CEO de K-2 GLOBAL BUSINESS sarl, expert en informatique, cybersécurité, réseaux, maintenance et Pentest-OffSec.</p>
+    <p>14 ans d’expérience dans le public et le privé, avec certifications Google, IBM et Microsoft.</p>
+  </div>
+</section>
+
+<!-- INNOVATION -->
+<section id="innovation" class="innovation">
+  <h2>Nos Produits Innovants</h2>
+  <div class="innovation-cards">
+    <div class="card">
+      <img src="images/fritte_colibri.png" alt="Frites COLIBRI">
+      <h3>Frites du Congo-Central</h3>
+      <p>Frites blanchies, séchées et conditionnées de 200 g à 2 kg pour ménages, restaurants et revendeurs. Produit sain et longue conservation.</p>
+    </div>
+    <div class="card">
+      <img src="images/Chips_colibri.png" alt="Chips COLIBRI">
+      <h3>Chips COLIBRI Kids</h3>
+      <p>Chips de patate douce naturelles, aromatisées et adaptées au goût des enfants. Sachets de 200 g à 500 g, pratiques et nutritifs.</p>
+    </div>
+    <div class="card">
+      <img src="images/jus_agro.png" alt="Jus naturels">
+      <h3>Jus et boissons</h3>
+      <p>Fabrication locale de jus naturels et boissons innovantes, complétant notre offre agroalimentaire saine et locale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="innovation">
+  <h2>Contactez-nous</h2>
+  <p>Email : contact@k2globalbusiness.com</p>
+  <p>Téléphone : +243 99 123 4567</p>
+  <p>Adresse : 34 Rue Gulf, Mont-Ngaliema, Kinshasa, RDC</p>
+</section>
+
+</main>
+
+<footer>
+© K-2 GLOBAL BUSINESS sarl • Tous droits réservés.
+</footer>
+
+</body>
+</html>
