@@ -1,322 +1,117 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>K-2 GLOBAL BUSINESS sarl</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Colibri</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-:root {
-  --primary:#0f172a;
-  --secondary:#0ea5a4;
-  --accent:#f97316;
-  --gold:#FFD700;
-  --bg-panel:#1b2545;
-  --text-light:#e6eef6;
-  --radius:14px;
-  --shadow:0 4px 20px rgba(0,0,0,0.4);
-  font-family:'Inter', sans-serif;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            line-height: 1.6;
+        }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  background:var(--primary);
-  color:var(--text-light);
-  line-height:1.6;
-}
+        /* ----- HEADER ----- */
+        header {
+            width: 100%;
+            position: relative;
+            background-color: black;
+            color: gold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 30px;
+            transition: all 0.4s ease-in-out;
+            z-index: 100;
+        }
 
-/* ================= NEW HEADER ================= */
-header{
-  width:100%;
-  background:black;
-  padding:20px 30px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:relative;
-  transition:0.4s ease;
-  z-index:900;
-  box-shadow:none;
-}
+        header.shrink {
+            padding: 8px 20px;
+            background-color: black;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transform: translateY(-4px);
+        }
 
-header.shrink{
-  position:fixed;
-  top:0;
-  left:0;
-  padding:8px 20px;
-  backdrop-filter:blur(6px);
-  box-shadow:0 4px 10px rgba(0,0,0,0.5);
-  transform:translateY(0);
-}
+        header img {
+            height: 60px;
+            transition: height 0.3s ease;
+        }
 
-.header-left, .header-right{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+        header.shrink img {
+            height: 40px;
+        }
 
-.header-img{
-  width:110px;
-  height:110px;
-  object-fit:contain;
-  transition:0.3s ease;
-}
+        h1 {
+            font-size: 26px;
+            font-weight: bold;
+            color: gold;
+            transition: font-size 0.3s ease;
+        }
 
-header.shrink .header-img{
-  width:60px;
-  height:60px;
-}
+        header.shrink h1 {
+            font-size: 20px;
+        }
 
-.header-center{
-  text-align:center;
-  flex:1;
-}
+        /* ----- CONTENU ----- */
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
 
-.header-title{
-  font-size:48px;
-  font-weight:900;
-  color:var(--gold);
-  text-shadow:2px 3px 0 black;
-  transition:0.3s ease;
-}
-
-header.shrink .header-title{
-  font-size:28px;
-}
-
-.subtitle{
-  font-size:18px;
-  color:white;
-  font-weight:600;
-  margin-top:5px;
-  transition:0.3s ease;
-}
-
-nav{
-  margin-top:10px;
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-nav a{
-  background:#b71c1c;
-  padding:6px 14px;
-  border-radius:8px;
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-  border:1px solid var(--gold);
-  transition:0.3s;
-}
-
-nav a:hover{
-  background:#ff4444;
-  color:black;
-}
-
-/* ================= MAIN ================= */
-main{
-  padding-top:40px;
-}
-
-/* ==== About Section ==== */
-section.about{
-  display:flex;
-  gap:15px;
-  padding:20px;
-  flex-wrap:wrap;
-}
-
-.about-column, .about-founder{
-  flex:1;
-  min-width:250px;
-  padding:20px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
-
-.about-column:nth-child(1){background:#ffe4b5;color:#0f172a;}
-.about-column:nth-child(2){background:#add8e6;color:#0f172a;}
-.about-column:nth-child(3){background:white;color:#0f172a;}
-
-.about-founder{
-  background:linear-gradient(120deg,#1f2845,#163152);
-  color:var(--gold);
-  text-align:center;
-}
-
-.about-founder img{
-  width:200px;
-  border-radius:16px;
-  margin-bottom:15px;
-  box-shadow:var(--shadow);
-}
-
-/* ================= INNOVATION ================= */
-section.innovation{
-  background:var(--bg-panel);
-  padding:20px 40px;
-  text-align:center;
-}
-.innovation h2{font-size:36px;color:var(--gold);margin-bottom:20px;}
-
-.innovation-cards{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.card{
-  background:var(--primary);
-  border-radius:var(--radius);
-  padding:20px;
-  width:280px;
-  box-shadow:var(--shadow);
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 8px 25px rgba(255,215,0,0.5);
-}
-
-.card img{
-  width:100%;
-  border-radius:12px;
-  margin-bottom:15px;
-}
-
-/* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  padding:20px;
-  background:#071035;
-  font-size:14px;
-  color:#aaa;
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-  .header-title{font-size:32px;}
-  .header-img{width:80px;height:80px;}
-  nav a{padding:5px 10px;font-size:12px;}
-}
-
-@media(max-width:480px){
-  .header-title{font-size:24px;}
-  .subtitle{font-size:14px;}
-}
-</style>
+        .content img {
+            max-width: 90%;
+            margin: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
 
-<header id="mainHeader">
-  <div class="header-left">
-    <img src="Drapeau_RDC.gif" class="header-img" alt="RDC">
-  </div>
+    <!-- ---------- HEADER ---------- -->
+    <header id="topNav">
+        <img src="Drapeau_RDC.gif" alt="Drapeau RDC">
+        <h1>K-2 Colibri</h1>
+        <img src="logo%20k-2.png" alt="Logo K-2">
+    </header>
 
-  <div class="header-center">
-    <h1 class="header-title">K-2 GLOBAL BUSINESS sarl</h1>
-    <p class="subtitle">RESTAURATION · AGRO-ALIMENTAIRE · IT NUMÉRIC</p>
-    <nav>
-      <a href="#about">À propos</a>
-      <a href="#innovation">Produits</a>
-      <a href="#founder">Fondateur</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+    <!-- ---------- CONTENU ---------- -->
+    <div class="content">
+        <h2>Bienvenue sur notre site</h2>
 
-  <div class="header-right">
-    <img src="logo k-2.png" class="header-img" alt="Logo">
-  </div>
-</header>
-
-<!-- ================= JS SHRINK EFFECT ================= -->
-<script>
-const header = document.getElementById("mainHeader");
-let lastScroll = 0;
-
-window.addEventListener("scroll", () => {
-  const current = window.scrollY;
-
-  if(current > 80){
-    header.classList.add("shrink");
-  } else {
-    header.classList.remove("shrink");
-  }
-
-  lastScroll = current;
-});
-</script>
-
-<main>
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <!-- Colonne 1 -->
-    <div class="about-column">
-      <h2>Le Projet COLIBRI</h2>
-      <p>COLIBRI transforme la patate douce locale en produits innovants...</p>
+        <img src="kasquin.jpg" alt="kasquin">
+        <img src="Chips_colibri.png" alt="chips">
+        <img src="fritte_colibri.png" alt="frites">
+        <img src="colibri.gif" alt="colibri animé">
+        <img src="colibri2.gif" alt="colibri animé">
+        <img src="colobri1.gif" alt="colibri animé">
+        <img src="colibri10.jpeg" alt="colibri jpeg">
     </div>
 
-    <!-- Colonne 2 -->
-    <div class="about-column">
-      <h2>Nos Objectifs</h2>
-      <ul>
-        <li>Réduire la faim grâce à des produits accessibles</li>
-        <li>Créer des emplois</li>
-        <li>Valoriser la patate douce locale</li>
-      </ul>
-    </div>
+    <!-- ---------- SCRIPT HEADER SHRINK ---------- -->
+    <script>
+        const header = document.getElementById("topNav");
+        let lastScroll = 0;
 
-    <!-- Colibri -->
-    <div class="about-column">
-      <h2>L'Exploit du Colibri</h2>
-      <img src="colibri2.gif" style="width:120px;">
-      <p>“Je fais ma part” — Le symbole de notre mission...</p>
-    </div>
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset;
 
-    <!-- Fondateur -->
-    <div class="about-founder" id="founder">
-      <img src="kasquin.jpg" alt="Ananias Kasanda">
-      <h2>Ananias KASANDA</h2>
-      <p>Expert IT, cybersécurité et Pentest avec 14 ans d’expérience...</p>
-    </div>
+            if (currentScroll > lastScroll) {
+                header.classList.add("shrink");
+            } else {
+                header.classList.remove("shrink");
+            }
 
-  </section>
-
-  <!-- INNOVATION -->
-  <section id="innovation" class="innovation">
-    <h2>Nos Produits Innovants</h2>
-    <div class="innovation-cards">
-      <div class="card">
-        <img src="fritte_colibri.png" alt="">
-        <h3>Frites du Congo-Central</h3>
-      </div>
-      <div class="card">
-        <img src="Chips_colibri.png" alt="">
-        <h3>Chips COLIBRI Kids</h3>
-      </div>
-      <div class="card">
-        <img src="jus_agro.png" alt="">
-        <h3>Jus naturels</h3>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="innovation">
-    <h2>Contactez-nous</h2>
-    Email : contact@k2globalbusiness.com
-  </section>
-
-</main>
-
-<footer>
-© 2025 K-2 GLOBAL BUSINESS sarl
-</footer>
+            lastScroll = currentScroll;
+        });
+    </script>
 
 </body>
 </html>
