@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNOVATION BRILLIANT</title>
+
+    <style>
+        /* RESET */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:#0f172a;
+            color:#e6eef6;
+            font-family:'Inter', sans-serif;
+            line-height:1.6;
+        }
+
+        /* ================= HEADER ================= */
+        header{
+            position: fixed;
+            top:0; left:0;
+            width:100%;
+            background: linear-gradient(75deg,#0ea5a4,#f97316);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            z-index:900;
+            padding:10px 0;
+        }
+
+        .header-wrapper{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            width:100%;
+            padding:0 20px;
+            flex-wrap:wrap;
+        }
+
+        .header-img{
+            width:160px;
+            height:auto;
+            max-width:40vw;
+            object-fit:contain;
+        }
+
+        .header-center{
+            text-align:center;
+            flex:1;
+        }
+
+        .header-title{
+            font-size:3rem;
+            font-weight:900;
+            color:#FFD700;
+            text-shadow:3px 5px 0 black;
+            margin-bottom:5px;
+        }
+
+        .subtitle{
+            color:white;
+            font-size:1rem;
+            font-weight:bold;
+        }
+
+        nav{
+            margin-top:10px;
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:10px;
+        }
+
+        nav a{
+            background:#b71c1c;
+            padding:8px 14px;
+            border-radius:8px;
+            font-weight:600;
+            border:1px solid gold;
+            color:white;
+            text-decoration:none;
+            transition:.3s;
+        }
+
+        nav a:hover{
+            background:#ff4444;
+            color:black;
+        }
+
+        /* ================= MAIN ================= */
+        main{
+            margin-top:260px;
+            padding:20px;
+        }
+
+        /* ABOUT SECTION */
+        section.about{
+            display:flex;
+            flex-wrap:wrap;
+            gap:15px;
+            width:100%;
+        }
+
+        .about-column,
+        .about-founder{
+            flex:1 1 calc(50% - 20px);
+            min-width:260px;
+            padding:20px;
+            border-radius:14px;
+            box-shadow:0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        .about-column:nth-child(1){
+            background:#ffe4b5;
+            color:#0f172a;
+        }
+
+        .about-column:nth-child(2){
+            background:#add8e6;
+            color:#0f172a;
+        }
+
+        .about-column:nth-child(3){
+            background:white;
+            color:#0f172a;
+            text-align:center;
+        }
+
+        .about-founder{
+            background:linear-gradient(120deg,#1f2845,#163152);
+            color:gold;
+            text-align:center;
+        }
+
+        .about-founder img{
+            width:180px;
+            border-radius:16px;
+            margin-bottom:10px;
+            box-shadow:0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        /* ================= INNOVATION ================= */
+        section.innovation{
+            background:#1b2545;
+            padding:20px;
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .innovation h2{
+            font-size:2.2rem;
+            color:gold;
+            margin-bottom:20px;
+        }
+
+        .innovation-cards{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:20px;
+        }
+
+        .card{
+            background:#0f172a;
+            padding:20px;
+            width:280px;
+            border-radius:14px;
+            box-shadow:0 4px 20px rgba(0,0,0,0.4);
+            transition:.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        .card img{
+            width:100%;
+            border-radius:12px;
+            margin-bottom:10px;
+        }
+
+        /* ================= CONTACT ================= */
+        footer{
+            margin-top:20px;
+            padding:20px;
+            text-align:center;
+            font-size:.9rem;
+            background:#071035;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        /* Tablettes */
+        @media(max-width:900px){
+            .header-title{ font-size:2.5rem; }
+            .header-img{ width:120px; }
+            main{ margin-top:220px; }
+        }
+
+        /* Téléphones */
+        @media(max-width:600px){
+            .header-wrapper{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .header-img{
+                width:100px;
+                max-width:30vw;
+            }
+
+            .header-title{
+                font-size:1.8rem;
+            }
+
+            nav a{
+                font-size:.8rem;
+                padding:6px 10px;
+            }
+
+            .about-column,
+            .about-founder{
+                flex:1 1 100%;
+            }
+
+            main{
+                margin-top:200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="header-wrapper">
+            <img src="images/logo.png" class="header-img" alt="Logo">
+
+            <div class="header-center">
+                <div class="header-title">INNOVATION BRILLIANT</div>
+                <div class="subtitle">Créativité • Technologie • Excellence</div>
+            </div>
+
+            <img src="images/logo.png" class="header-img" alt="Logo 2">
+        </div>
+
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Nos Services</a>
+            <a href="#">Nos Innovations</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <section class="about">
+            <div class="about-column">
+                <h2>Notre Vision</h2>
+                <p>
+                    Nous proposons des solutions technologiques modernes
+                    pour accompagner entreprises et particuliers vers l'avenir.
+                </p>
+            </div>
+
+            <div class="about-column">
+                <h2>Mission</h2>
+                <p>
+                    Offrir des services innovants, fiables et adaptés aux exigences du monde numérique.
+                </p>
+            </div>
+
+            <div class="about-founder">
+                <img src="images/fondateur.jpg" alt="Fondateur">
+                <h3>Fondateur : Ananias</h3>
+                <p>Expert en innovation technologique et cybersécurité.</p>
+            </div>
+        </section>
+
+
+        <!-- ================= INNOVATION ================= -->
+        <section class="innovation">
+            <h2>Nos Innovations</h2>
+
+            <div class="innovation-cards">
+
+                <div class="card">
+                    <img src="images/carte1.jpg" alt="Innovation 1">
+                    <h3>Développement Web</h3>
+                    <p>Création de sites modernes et sécurisés.</p>
+                </div>
+
+                <div class="card">
+                    <img src="images/carte2.jpg" alt="Innovation 2">
+                    <h3>Énergie Solaire</h3>
+                    <p>Systèmes photovoltaïques intelligents.</p>
+                </div>
+
+                <div class="card">
+                    <img src="images/carte3.jpg" alt="Innovation 3">
+                    <h3>Cybersécurité</h3>
+                    <p>Protection avancée des infrastructures numériques.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        © 2025 - Innovation Brilliant | Tous droits réservés
+    </footer>
+
+</body>
+</html>
