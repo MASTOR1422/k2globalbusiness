@@ -1,117 +1,240 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Site K-2 Colibri — produits Colibri (chips, frites, etc.)."/>
     <title>Site Colibri</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root{
+            --bg: #f0f0f0;
+            --header-bg: #000;
+            --accent: gold;
+            --max-width: 1200px;
+            --gutter: 16px;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f0f0;
+        *{box-sizing: border-box;margin:0;padding:0}
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: #111;
             line-height: 1.6;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+
+        /* skip link for accessibility */
+        .skip-link{
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width:1px;height:1px;
+            overflow:hidden;
+        }
+        .skip-link:focus{
+            left: 8px;
+            top: 8px;
+            width: auto;
+            height: auto;
+            padding: 8px 12px;
+            background: #000;
+            color: #fff;
+            z-index: 9999;
+            border-radius: 4px;
         }
 
         /* ----- HEADER ----- */
-        header {
+        header{
+            width:100%;
+            position: sticky;
+            top:0;
+            background-color: var(--header-bg);
+            color: var(--accent);
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap: 12px;
+            padding: 18px 28px;
+            transition: padding 0.28s ease, box-shadow 0.28s ease, transform 0.2s ease;
+            z-index:100;
+        }
+
+        /* container so header content doesn't stretch too wide */
+        .container{
             width: 100%;
-            position: relative;
-            background-color: black;
-            color: gold;
+            max-width: var(--max-width);
+            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px 30px;
-            transition: all 0.4s ease-in-out;
-            z-index: 100;
+            gap: 12px;
         }
 
-        header.shrink {
-            padding: 8px 20px;
-            background-color: black;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            transform: translateY(-4px);
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:12px;
         }
 
-        header img {
-            height: 60px;
-            transition: height 0.3s ease;
+        header img.logo{
+            height: clamp(36px, 6vw, 60px);
+            width: auto;
+            display:block;
+            transition: height 0.22s ease;
         }
 
-        header.shrink img {
-            height: 40px;
+        h1.site-title{
+            font-size: clamp(18px, 3.2vw, 26px);
+            font-weight:700;
+            color: var(--accent);
+            letter-spacing: 0.4px;
+            margin-left: 6px;
+            transition: font-size 0.22s ease;
         }
 
-        h1 {
-            font-size: 26px;
-            font-weight: bold;
-            color: gold;
-            transition: font-size 0.3s ease;
+        header.shrink{
+            padding: 8px 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+            transform: translateY(-2px);
         }
 
-        header.shrink h1 {
-            font-size: 20px;
+        header.shrink img.logo{
+            height: clamp(28px, 5vw, 40px);
         }
 
         /* ----- CONTENU ----- */
-        .content {
-            padding: 40px;
-            text-align: center;
+        main{
+            padding: 28px 16px;
+            max-width: var(--max-width);
+            margin: 0 auto;
         }
 
-        .content img {
-            max-width: 90%;
-            margin: 20px;
-            border-radius: 10px;
+        .hero{
+            text-align: center;
+            margin-bottom: 20px;
         }
+
+        .hero h2{
+            font-size: clamp(20px, 3.6vw, 28px);
+            color: #111;
+            margin-bottom: 12px;
+        }
+
+        /* responsive gallery */
+        .gallery{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--gutter);
+            align-items: start;
+            justify-items: center;
+        }
+
+        .gallery img{
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            display:block;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        /* smaller screens adjustments */
+        @media (max-width: 720px){
+            header{
+                padding: 12px 16px;
+            }
+
+            .container{
+                flex-direction: row;
+            }
+
+            /* center the title on small screens and allow wrapping */
+            .brand{
+                gap:8px;
+            }
+        }
+
+        @media (max-width: 480px){
+            .container{
+                flex-direction: column;
+                gap: 6px;
+                align-items: center;
+            }
+
+            header{
+                padding: 10px 12px;
+            }
+
+            h1.site-title{
+                text-align: center;
+                font-size: clamp(16px, 5vw, 20px);
+            }
+        }
+
     </style>
 </head>
-
 <body>
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
 
     <!-- ---------- HEADER ---------- -->
-    <header id="topNav">
-        <img src="Drapeau_RDC.gif" alt="Drapeau RDC">
-        <h1>K-2 Colibri</h1>
-        <img src="logo%20k-2.png" alt="Logo K-2">
+    <header id="topNav" aria-label="Barre de navigation principale">
+        <div class="container">
+            <div class="brand" aria-hidden="false">
+                <img class="logo" src="Drapeau_RDC.gif" alt="Drapeau de la République Démocratique du Congo">
+                <h1 class="site-title">K-2 Colibri</h1>
+            </div>
+
+            <div class="brand">
+                <!-- If you have a navigation later, replace this img with a nav element -->
+                <img class="logo" src="logo%20k-2.png" alt="Logo K-2">
+            </div>
+        </div>
     </header>
 
     <!-- ---------- CONTENU ---------- -->
-    <div class="content">
-        <h2>Bienvenue sur notre site</h2>
+    <main id="main-content">
+        <section class="hero" aria-labelledby="welcome-title">
+            <h2 id="welcome-title">Bienvenue sur notre site</h2>
+            <p style="opacity:.85;margin-top:8px;">Découvrez nos produits Colibri — chips, frites et plus.</p>
+        </section>
 
-        <img src="kasquin.jpg" alt="kasquin">
-        <img src="Chips_colibri.png" alt="chips">
-        <img src="fritte_colibri.png" alt="frites">
-        <img src="colibri.gif" alt="colibri animé">
-        <img src="colibri2.gif" alt="colibri animé">
-        <img src="colobri1.gif" alt="colibri animé">
-        <img src="colibri10.jpeg" alt="colibri jpeg">
-    </div>
+        <section class="gallery" aria-label="Galerie de produits">
+            <img src="kasquin.jpg" alt="Produit Kasquin">
+            <img src="Chips_colibri.png" alt="Chips Colibri">
+            <img src="fritte_colibri.png" alt="Frites Colibri">
+            <img src="colibri.gif" alt="Colibri animé">
+            <img src="colibri2.gif" alt="Colibri animé">
+            <img src="colobri1.gif" alt="Colibri animé">
+            <img src="colibri10.jpeg" alt="Image Colibri">
+        </section>
+    </main>
 
     <!-- ---------- SCRIPT HEADER SHRINK ---------- -->
     <script>
-        const header = document.getElementById("topNav");
-        let lastScroll = 0;
-
-        window.addEventListener("scroll", () => {
-            let currentScroll = window.pageYOffset;
-
-            if (currentScroll > lastScroll) {
-                header.classList.add("shrink");
-            } else {
-                header.classList.remove("shrink");
-            }
-
-            lastScroll = currentScroll;
-        });
+        (function(){
+            const header = document.getElementById('topNav');
+            let lastScroll = window.pageYOffset || 0;
+            // Throttle scroll handler for performance
+            let ticking = false;
+            window.addEventListener('scroll', function(){
+                const current = window.pageYOffset || 0;
+                if (!ticking){
+                    window.requestAnimationFrame(function(){
+                        if (current > lastScroll && current > 20){
+                            header.classList.add('shrink');
+                        } else {
+                            header.classList.remove('shrink');
+                        }
+                        lastScroll = current <= 0 ? 0 : current; // For Mobile or negative scrolling
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, {passive: true});
+        })();
     </script>
-
 </body>
 </html>
