@@ -1,240 +1,322 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Site K-2 Colibri — produits Colibri (chips, frites, etc.)."/>
-    <title>Site Colibri</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-2 GLOBAL BUSINESS sarl</title>
 
-    <style>
-        :root{
-            --bg: #f0f0f0;
-            --header-bg: #000;
-            --accent: gold;
-            --max-width: 1200px;
-            --gutter: 16px;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
-        *{box-sizing: border-box;margin:0;padding:0}
+<style>
+:root {
+  --primary:#0f172a;
+  --secondary:#0ea5a4;
+  --accent:#f97316;
+  --gold:#FFD700;
+  --bg-panel:#1b2545;
+  --text-light:#e6eef6;
+  --radius:14px;
+  --shadow:0 4px 20px rgba(0,0,0,0.4);
+  font-family:'Inter', sans-serif;
+}
 
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--bg);
-            color: #111;
-            line-height: 1.6;
-            -webkit-font-smoothing:antialiased;
-            -moz-osx-font-smoothing:grayscale;
-        }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--primary);
+  color:var(--text-light);
+  line-height:1.6;
+}
 
-        /* skip link for accessibility */
-        .skip-link{
-            position: absolute;
-            left: -9999px;
-            top: auto;
-            width:1px;height:1px;
-            overflow:hidden;
-        }
-        .skip-link:focus{
-            left: 8px;
-            top: 8px;
-            width: auto;
-            height: auto;
-            padding: 8px 12px;
-            background: #000;
-            color: #fff;
-            z-index: 9999;
-            border-radius: 4px;
-        }
+/* ================= NEW HEADER ================= */
+header{
+  width:100%;
+  background:black;
+  padding:20px 30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  transition:0.4s ease;
+  z-index:900;
+  box-shadow:none;
+}
 
-        /* ----- HEADER ----- */
-        header{
-            width:100%;
-            position: sticky;
-            top:0;
-            background-color: var(--header-bg);
-            color: var(--accent);
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            gap: 12px;
-            padding: 18px 28px;
-            transition: padding 0.28s ease, box-shadow 0.28s ease, transform 0.2s ease;
-            z-index:100;
-        }
+header.shrink{
+  position:fixed;
+  top:0;
+  left:0;
+  padding:8px 20px;
+  backdrop-filter:blur(6px);
+  box-shadow:0 4px 10px rgba(0,0,0,0.5);
+  transform:translateY(0);
+}
 
-        /* container so header content doesn't stretch too wide */
-        .container{
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-        }
+.header-left, .header-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-        .brand{
-            display:flex;
-            align-items:center;
-            gap:12px;
-        }
+.header-img{
+  width:110px;
+  height:110px;
+  object-fit:contain;
+  transition:0.3s ease;
+}
 
-        header img.logo{
-            height: clamp(36px, 6vw, 60px);
-            width: auto;
-            display:block;
-            transition: height 0.22s ease;
-        }
+header.shrink .header-img{
+  width:60px;
+  height:60px;
+}
 
-        h1.site-title{
-            font-size: clamp(18px, 3.2vw, 26px);
-            font-weight:700;
-            color: var(--accent);
-            letter-spacing: 0.4px;
-            margin-left: 6px;
-            transition: font-size 0.22s ease;
-        }
+.header-center{
+  text-align:center;
+  flex:1;
+}
 
-        header.shrink{
-            padding: 8px 18px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.45);
-            transform: translateY(-2px);
-        }
+.header-title{
+  font-size:48px;
+  font-weight:900;
+  color:var(--gold);
+  text-shadow:2px 3px 0 black;
+  transition:0.3s ease;
+}
 
-        header.shrink img.logo{
-            height: clamp(28px, 5vw, 40px);
-        }
+header.shrink .header-title{
+  font-size:28px;
+}
 
-        /* ----- CONTENU ----- */
-        main{
-            padding: 28px 16px;
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
+.subtitle{
+  font-size:18px;
+  color:white;
+  font-weight:600;
+  margin-top:5px;
+  transition:0.3s ease;
+}
 
-        .hero{
-            text-align: center;
-            margin-bottom: 20px;
-        }
+nav{
+  margin-top:10px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
 
-        .hero h2{
-            font-size: clamp(20px, 3.6vw, 28px);
-            color: #111;
-            margin-bottom: 12px;
-        }
+nav a{
+  background:#b71c1c;
+  padding:6px 14px;
+  border-radius:8px;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  border:1px solid var(--gold);
+  transition:0.3s;
+}
 
-        /* responsive gallery */
-        .gallery{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: var(--gutter);
-            align-items: start;
-            justify-items: center;
-        }
+nav a:hover{
+  background:#ff4444;
+  color:black;
+}
 
-        .gallery img{
-            width: 100%;
-            max-width: 320px;
-            height: auto;
-            display:block;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-        }
+/* ================= MAIN ================= */
+main{
+  padding-top:40px;
+}
 
-        /* smaller screens adjustments */
-        @media (max-width: 720px){
-            header{
-                padding: 12px 16px;
-            }
+/* ==== About Section ==== */
+section.about{
+  display:flex;
+  gap:15px;
+  padding:20px;
+  flex-wrap:wrap;
+}
 
-            .container{
-                flex-direction: row;
-            }
+.about-column, .about-founder{
+  flex:1;
+  min-width:250px;
+  padding:20px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
 
-            /* center the title on small screens and allow wrapping */
-            .brand{
-                gap:8px;
-            }
-        }
+.about-column:nth-child(1){background:#ffe4b5;color:#0f172a;}
+.about-column:nth-child(2){background:#add8e6;color:#0f172a;}
+.about-column:nth-child(3){background:white;color:#0f172a;}
 
-        @media (max-width: 480px){
-            .container{
-                flex-direction: column;
-                gap: 6px;
-                align-items: center;
-            }
+.about-founder{
+  background:linear-gradient(120deg,#1f2845,#163152);
+  color:var(--gold);
+  text-align:center;
+}
 
-            header{
-                padding: 10px 12px;
-            }
+.about-founder img{
+  width:200px;
+  border-radius:16px;
+  margin-bottom:15px;
+  box-shadow:var(--shadow);
+}
 
-            h1.site-title{
-                text-align: center;
-                font-size: clamp(16px, 5vw, 20px);
-            }
-        }
+/* ================= INNOVATION ================= */
+section.innovation{
+  background:var(--bg-panel);
+  padding:20px 40px;
+  text-align:center;
+}
+.innovation h2{font-size:36px;color:var(--gold);margin-bottom:20px;}
 
-    </style>
+.innovation-cards{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.card{
+  background:var(--primary);
+  border-radius:var(--radius);
+  padding:20px;
+  width:280px;
+  box-shadow:var(--shadow);
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 25px rgba(255,215,0,0.5);
+}
+
+.card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#071035;
+  font-size:14px;
+  color:#aaa;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .header-title{font-size:32px;}
+  .header-img{width:80px;height:80px;}
+  nav a{padding:5px 10px;font-size:12px;}
+}
+
+@media(max-width:480px){
+  .header-title{font-size:24px;}
+  .subtitle{font-size:14px;}
+}
+</style>
 </head>
+
 <body>
-    <a class="skip-link" href="#main-content">Aller au contenu</a>
 
-    <!-- ---------- HEADER ---------- -->
-    <header id="topNav" aria-label="Barre de navigation principale">
-        <div class="container">
-            <div class="brand" aria-hidden="false">
-                <img class="logo" src="Drapeau_RDC.gif" alt="Drapeau de la République Démocratique du Congo">
-                <h1 class="site-title">K-2 Colibri</h1>
-            </div>
+<header id="mainHeader">
+  <div class="header-left">
+    <img src="Drapeau_RDC.gif" class="header-img" alt="RDC">
+  </div>
 
-            <div class="brand">
-                <!-- If you have a navigation later, replace this img with a nav element -->
-                <img class="logo" src="logo%20k-2.png" alt="Logo K-2">
-            </div>
-        </div>
-    </header>
+  <div class="header-center">
+    <h1 class="header-title">K-2 GLOBAL BUSINESS sarl</h1>
+    <p class="subtitle">RESTAURATION · AGRO-ALIMENTAIRE · IT NUMÉRIC</p>
+    <nav>
+      <a href="#about">À propos</a>
+      <a href="#innovation">Produits</a>
+      <a href="#founder">Fondateur</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 
-    <!-- ---------- CONTENU ---------- -->
-    <main id="main-content">
-        <section class="hero" aria-labelledby="welcome-title">
-            <h2 id="welcome-title">Bienvenue sur notre site</h2>
-            <p style="opacity:.85;margin-top:8px;">Découvrez nos produits Colibri — chips, frites et plus.</p>
-        </section>
+  <div class="header-right">
+    <img src="logo k-2.png" class="header-img" alt="Logo">
+  </div>
+</header>
 
-        <section class="gallery" aria-label="Galerie de produits">
-            <img src="kasquin.jpg" alt="Produit Kasquin">
-            <img src="Chips_colibri.png" alt="Chips Colibri">
-            <img src="fritte_colibri.png" alt="Frites Colibri">
-            <img src="colibri.gif" alt="Colibri animé">
-            <img src="colibri2.gif" alt="Colibri animé">
-            <img src="colobri1.gif" alt="Colibri animé">
-            <img src="colibri10.jpeg" alt="Image Colibri">
-        </section>
-    </main>
+<!-- ================= JS SHRINK EFFECT ================= -->
+<script>
+const header = document.getElementById("mainHeader");
+let lastScroll = 0;
 
-    <!-- ---------- SCRIPT HEADER SHRINK ---------- -->
-    <script>
-        (function(){
-            const header = document.getElementById('topNav');
-            let lastScroll = window.pageYOffset || 0;
-            // Throttle scroll handler for performance
-            let ticking = false;
-            window.addEventListener('scroll', function(){
-                const current = window.pageYOffset || 0;
-                if (!ticking){
-                    window.requestAnimationFrame(function(){
-                        if (current > lastScroll && current > 20){
-                            header.classList.add('shrink');
-                        } else {
-                            header.classList.remove('shrink');
-                        }
-                        lastScroll = current <= 0 ? 0 : current; // For Mobile or negative scrolling
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            }, {passive: true});
-        })();
-    </script>
+window.addEventListener("scroll", () => {
+  const current = window.scrollY;
+
+  if(current > 80){
+    header.classList.add("shrink");
+  } else {
+    header.classList.remove("shrink");
+  }
+
+  lastScroll = current;
+});
+</script>
+
+<main>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <!-- Colonne 1 -->
+    <div class="about-column">
+      <h2>Le Projet COLIBRI</h2>
+      <p>COLIBRI transforme la patate douce locale en produits innovants...</p>
+    </div>
+
+    <!-- Colonne 2 -->
+    <div class="about-column">
+      <h2>Nos Objectifs</h2>
+      <ul>
+        <li>Réduire la faim grâce à des produits accessibles</li>
+        <li>Créer des emplois</li>
+        <li>Valoriser la patate douce locale</li>
+      </ul>
+    </div>
+
+    <!-- Colibri -->
+    <div class="about-column">
+      <h2>L'Exploit du Colibri</h2>
+      <img src="colibri2.gif" style="width:120px;">
+      <p>“Je fais ma part” — Le symbole de notre mission...</p>
+    </div>
+
+    <!-- Fondateur -->
+    <div class="about-founder" id="founder">
+      <img src="kasquin.jpg" alt="Ananias Kasanda">
+      <h2>Ananias KASANDA</h2>
+      <p>Expert IT, cybersécurité et Pentest avec 14 ans d’expérience...</p>
+    </div>
+
+  </section>
+
+  <!-- INNOVATION -->
+  <section id="innovation" class="innovation">
+    <h2>Nos Produits Innovants</h2>
+    <div class="innovation-cards">
+      <div class="card">
+        <img src="fritte_colibri.png" alt="">
+        <h3>Frites du Congo-Central</h3>
+      </div>
+      <div class="card">
+        <img src="Chips_colibri.png" alt="">
+        <h3>Chips COLIBRI Kids</h3>
+      </div>
+      <div class="card">
+        <img src="jus_agro.png" alt="">
+        <h3>Jus naturels</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="innovation">
+    <h2>Contactez-nous</h2>
+    Email : contact@k2globalbusiness.com
+  </section>
+
+</main>
+
+<footer>
+© 2025 K-2 GLOBAL BUSINESS sarl
+</footer>
+
 </body>
 </html>
