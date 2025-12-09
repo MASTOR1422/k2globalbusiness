@@ -1,323 +1,376 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INNOVATION BRILLIANT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-2 GLOBAL BUSINESS sarl</title>
+<meta name="description" content="K-2 GLOBAL BUSINESS sarl - Transformation de la patate douce et produits agroalimentaires innovants. Découvrez notre projet COLIBRI et notre fondateur.">
 
-    <style>
-        /* RESET */
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
-        body{
-            background:#0f172a;
-            color:#e6eef6;
-            font-family:'Inter', sans-serif;
-            line-height:1.6;
-        }
+<style>
+:root {
+  --primary:#0f172a;
+  --secondary:#0ea5a4;
+  --accent:#f97316;
+  --gold:#FFD700;
+  --bg-panel:#1b2545;
+  --text-light:#e6eef6;
+  --radius:14px;
+  --shadow:0 4px 20px rgba(0,0,0,0.4);
+  font-family:'Inter', sans-serif;
+}
 
-        /* ================= HEADER ================= */
-        header{
-            position: fixed;
-            top:0; left:0;
-            width:100%;
-            background: linear-gradient(75deg,#0ea5a4,#f97316);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-            z-index:900;
-            padding:10px 0;
-        }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--primary); color:var(--text-light); line-height:1.6;}
 
-        .header-wrapper{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            width:100%;
-            padding:0 20px;
-            flex-wrap:wrap;
-        }
+/* ================= HEADER ================= */
+header{
+  position: fixed;
+  top:0; left:0;
+  width:100%;
+  height:250px;
+  background: linear-gradient(75deg,var(--secondary),var(--accent));
+  box-shadow: var(--shadow);
+  z-index:900;
+  display: flex;
+  align-items: center;
+  border: 2px solid black; /* encadrement global */
+}
 
-        .header-img{
-            width:160px;
-            height:auto;
-            max-width:40vw;
-            object-fit:contain;
-        }
+.header-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
 
-        .header-center{
-            text-align:center;
-            flex:1;
-        }
+.header-center{
+  text-align:center;
+  flex:1;
+}
+.header-title{
+  font-size:65px;
+  font-weight:900;
+  color:var(--gold);
+  text-shadow:3px 5px 0 black;
+  margin:0;
+  border: 3px solid black; /* encadrement titre */
+  padding: 5px 15px;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.2);
+}
 
-        .header-title{
-            font-size:3rem;
-            font-weight:900;
-            color:#FFD700;
-            text-shadow:3px 5px 0 black;
-            margin-bottom:5px;
-        }
+.subtitle{
+  font-size:20px;
+  font-weight:bold;
+  text-transform:uppercase;
+  color:#fff;
+  margin:5px 0 10px 0;
+}
 
-        .subtitle{
-            color:white;
-            font-size:1rem;
-            font-weight:bold;
-        }
+nav{
+  margin-top:10px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap: wrap;
+}
+nav a{
+  background:#b71c1c;
+  padding:8px 16px;
+  border-radius:8px;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  border:1px solid var(--gold);
+  transition:0.3s;
+}
+nav a:hover{
+  background:#ff4444;
+  color:black;
+}
 
-        nav{
-            margin-top:10px;
-            display:flex;
-            justify-content:center;
-            flex-wrap:wrap;
-            gap:10px;
-        }
+.header-img{
+  width:300px;
+  height:300px;
+  object-fit:contain;
+}
 
-        nav a{
-            background:#b71c1c;
-            padding:8px 14px;
-            border-radius:8px;
-            font-weight:600;
-            border:1px solid gold;
-            color:white;
-            text-decoration:none;
-            transition:.3s;
-        }
+/* ================= MAIN & ABOUT ================= */
+main{
+  margin-top:250px; /* espace pour header fixe */
+}
 
-        nav a:hover{
-            background:#ff4444;
-            color:black;
-        }
+/* About + Fondateur */
+section.about{
+  display: flex;
+  justify-content: flex-start;
+  gap:10px;
+  width: 100%;
+  padding:20px;
+  flex-wrap: wrap;
+}
 
-        /* ================= MAIN ================= */
-        main{
-            margin-top:260px;
-            padding:20px;
-        }
+/* Colonnes principales */
+.about-column, .about-founder{
+  flex:1;
+  min-width:0;
+  padding:20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display:flex;
+  flex-direction: column;
+}
 
-        /* ABOUT SECTION */
-        section.about{
-            display:flex;
-            flex-wrap:wrap;
-            gap:15px;
-            width:100%;
-        }
+/* Couleurs colonnes */
+.about-column:nth-child(1){ background:#ffe4b5; color:#0f172a; }
+.about-column:nth-child(2){ background:#add8e6; color:#0f172a; }
+.about-column:nth-child(3){ background:#ffffff; color:#0f172a; display:flex; flex-direction:column; justify-content:space-between; align-items:center; }
 
-        .about-column,
-        .about-founder{
-            flex:1 1 calc(50% - 20px);
-            min-width:260px;
-            padding:20px;
-            border-radius:14px;
-            box-shadow:0 4px 20px rgba(0,0,0,0.4);
-        }
+/* Colonne Fondateur */
+.about-founder{
+  background: linear-gradient(120deg,#1f2845,#163152);
+  color:var(--gold);
+  align-items:center;
+}
 
-        .about-column:nth-child(1){
-            background:#ffe4b5;
-            color:#0f172a;
-        }
+.about-founder img{
+  width:200px;
+  border-radius:16px;
+  margin-bottom:15px;
+  box-shadow: var(--shadow);
+}
 
-        .about-column:nth-child(2){
-            background:#add8e6;
-            color:#0f172a;
-        }
+.about-column h2, .about-founder h2{
+  font-size:24px;
+  margin-bottom:10px;
+}
 
-        .about-column:nth-child(3){
-            background:white;
-            color:#0f172a;
-            text-align:center;
-        }
+.about-column p, .about-column ul li, .about-founder p{
+  font-size:16px;
+  margin-bottom:12px;
+}
 
-        .about-founder{
-            background:linear-gradient(120deg,#1f2845,#163152);
-            color:gold;
-            text-align:center;
-        }
+/* ================= INNOVATION ================= */
+section.innovation{
+  background:var(--bg-panel);
+  padding:20px 40px;
+  text-align:center;
+}
+.innovation h2{font-size:36px; color:var(--gold); margin-bottom:20px;}
+.innovation-cards{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.card{
+  background:var(--primary);
+  border-radius:var(--radius);
+  padding:20px;
+  width:280px;
+  box-shadow:var(--shadow);
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 25px rgba(255,215,0,0.5);
+}
+.card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+.card h3{
+  font-size:20px;
+  color:var(--secondary);
+  margin-bottom:10px;
+}
+.card p{font-size:14px;}
 
-        .about-founder img{
-            width:180px;
-            border-radius:16px;
-            margin-bottom:10px;
-            box-shadow:0 4px 20px rgba(0,0,0,0.4);
-        }
+footer{
+  text-align:center;
+  padding:20px;
+  background:#071035;
+  font-size:14px;
+  color:#aaa;
+}
 
-        /* ================= INNOVATION ================= */
-        section.innovation{
-            background:#1b2545;
-            padding:20px;
-            text-align:center;
-            margin-top:20px;
-        }
+/* ================= RESPONSIVE ================= */
+img{
+  max-width:100%;
+  height:auto;
+}
 
-        .innovation h2{
-            font-size:2.2rem;
-            color:gold;
-            margin-bottom:20px;
-        }
+@media screen and (max-width: 1200px) {
+  section.about{
+    flex-wrap: wrap;
+  }
+  .about-column, .about-founder{
+    flex:1 1 45%;
+    min-width: 250px;
+    margin-bottom: 15px;
+  }
+  .header-img{
+    width:150px;
+    height:150px;
+  }
+  .header-title{
+    font-size:45px;
+    padding: 5px 10px;
+  }
+  .subtitle{
+    font-size:16px;
+  }
+}
 
-        .innovation-cards{
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:20px;
-        }
+@media screen and (max-width: 768px) {
+  .header-wrapper{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  nav{
+    flex-wrap: wrap;
+  }
+  section.about{
+    flex-direction: column;
+    gap:15px;
+  }
+  .about-column, .about-founder{
+    width:100%;
+    margin-bottom:10px;
+  }
+  .header-title{
+    font-size:32px;
+  }
+  .header-img{
+    width:120px;
+    height:120px;
+  }
+}
 
-        .card{
-            background:#0f172a;
-            padding:20px;
-            width:280px;
-            border-radius:14px;
-            box-shadow:0 4px 20px rgba(0,0,0,0.4);
-            transition:.3s;
-        }
-
-        .card:hover{
-            transform:translateY(-5px);
-        }
-
-        .card img{
-            width:100%;
-            border-radius:12px;
-            margin-bottom:10px;
-        }
-
-        /* ================= CONTACT ================= */
-        footer{
-            margin-top:20px;
-            padding:20px;
-            text-align:center;
-            font-size:.9rem;
-            background:#071035;
-        }
-
-        /* ================= RESPONSIVE ================= */
-
-        /* Tablettes */
-        @media(max-width:900px){
-            .header-title{ font-size:2.5rem; }
-            .header-img{ width:120px; }
-            main{ margin-top:220px; }
-        }
-
-        /* Téléphones */
-        @media(max-width:600px){
-            .header-wrapper{
-                flex-direction:column;
-                text-align:center;
-            }
-
-            .header-img{
-                width:100px;
-                max-width:30vw;
-            }
-
-            .header-title{
-                font-size:1.8rem;
-            }
-
-            nav a{
-                font-size:.8rem;
-                padding:6px 10px;
-            }
-
-            .about-column,
-            .about-founder{
-                flex:1 1 100%;
-            }
-
-            main{
-                margin-top:200px;
-            }
-        }
-    </style>
+@media screen and (max-width: 480px){
+  .header-title{
+    font-size:24px;
+  }
+  .subtitle{
+    font-size:14px;
+  }
+  nav a{
+    font-size:12px;
+    padding:6px 10px;
+  }
+}
+</style>
 </head>
-
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header>
-        <div class="header-wrapper">
-            <img src="images/logo.png" class="header-img" alt="Logo">
+<header>
+  <div class="header-wrapper">
+    <img src="images/Drapeau_RDC.gif" alt="Drapeau RDC" class="header-img">
+    <div class="header-center">
+      <h1 class="header-title">K-2 GLOBAL BUSINESS sarl</h1>
+      <p class="subtitle">RESTAURATION · AGRO-ALIMENTAIRE · IT NUMÉRIC</p>
+      <nav>
+        <a href="#about">À propos</a>
+        <a href="#innovation">Produits</a>
+        <a href="#founder">Fondateur</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <img src="images/logo k-2.png" alt="Logo K-2" class="header-img">
+  </div>
+</header>
 
-            <div class="header-center">
-                <div class="header-title">INNOVATION BRILLIANT</div>
-                <div class="subtitle">Créativité • Technologie • Excellence</div>
-            </div>
+<main>
 
-            <img src="images/logo.png" class="header-img" alt="Logo 2">
-        </div>
+<!-- ABOUT + FONDATEUR -->
+<section id="about" class="about">
 
-        <nav>
-            <a href="#">Accueil</a>
-            <a href="#">Nos Services</a>
-            <a href="#">Nos Innovations</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+  <!-- Colonne 1 -->
+  <div class="about-column">
+    <h2>Le Projet COLIBRI</h2>
+    <p>COLIBRI est un projet agroalimentaire innovant visant à transformer la patate douce locale en produits sains et accessibles, réduisant la faim et valorisant les agriculteurs du Congo-Central.</p>
+    <ul>
+      <li>Phase 1 : Frites blanchies, séchées, emballées (200 g – 2 kg) pour consommation familiale et rapide.</li>
+      <li>Phase 2 : Chips COLIBRI Kids aromatisées pour enfants et jeunes consommateurs.</li>
+      <li>Produits hygiéniques, nutritifs et faciles à conserver.</li>
+    </ul>
+  </div>
 
+  <!-- Colonne 2 -->
+  <div class="about-column">
+    <h2>Nos Objectifs</h2>
+    <ul>
+      <li>Réduire la faim grâce à des produits accessibles</li>
+      <li>Créer des emplois directs et indirects</li>
+      <li>Valoriser la patate douce locale</li>
+      <li>Développer une marque innovante et reconnue</li>
+      <li>Promouvoir une alimentation saine et durable</li>
+    </ul>
+  </div>
 
-    <!-- ================= MAIN ================= -->
-    <main>
+  <!-- Colonne 3 : Légende du Colibri -->
+  <div class="about-column">
+   <h2>L'Exploit du Colibri</h2>
+   <img src="images/colibri2.gif" alt="Colibri" style="max-width:100%; width:120px; height:auto; margin-bottom:15px;">
+   <p style="text-align:center; line-height:1.5;">
+      “Comme dans la légende du colibri qui, malgré sa petite taille, décide d’agir pour éteindre l’incendie en disant : « Je fais ma part »,
+      le Projet COLIBRI se veut une contribution déterminante dans la lutte contre la faim et la crise alimentaire en RDC.
+      En transformant la patate douce locale en produits sains, accessibles et durables, nous faisons notre part pour nourrir la population, créer des emplois et valoriser nos ressources.”
+    </p>
+  </div>
 
-        <section class="about">
-            <div class="about-column">
-                <h2>Notre Vision</h2>
-                <p>
-                    Nous proposons des solutions technologiques modernes
-                    pour accompagner entreprises et particuliers vers l'avenir.
-                </p>
-            </div>
+  <!-- Colonne Fondateur -->
+  <div class="about-founder" id="founder">
+    <img src="images/kasquin.jpg" alt="Ananias Kasanda">
+    <h2>Ananias KASANDA TSHIPEPELE</h2>
+    <p>Fondateur et CEO de K-2 GLOBAL BUSINESS sarl, expert en informatique, cybersécurité, réseaux, maintenance et Pentest-OffSec.</p>
+    <p>14 ans d’expérience dans le public et le privé, avec certifications Google, IBM et Microsoft.</p>
+  </div>
+</section>
 
-            <div class="about-column">
-                <h2>Mission</h2>
-                <p>
-                    Offrir des services innovants, fiables et adaptés aux exigences du monde numérique.
-                </p>
-            </div>
+<!-- INNOVATION -->
+<section id="innovation" class="innovation">
+  <h2>Nos Produits Innovants</h2>
+  <div class="innovation-cards">
+    <div class="card">
+      <img src="images/fritte_colibri.png" alt="Frites COLIBRI">
+      <h3>Frites du Congo-Central</h3>
+      <p>Frites blanchies, séchées et conditionnées de 200 g à 2 kg pour ménages, restaurants et revendeurs. Produit sain et longue conservation.</p>
+    </div>
+    <div class="card">
+      <img src="images/Chips_colibri.png" alt="Chips COLIBRI">
+      <h3>Chips COLIBRI Kids</h3>
+      <p>Chips de patate douce naturelles, aromatisées et adaptées au goût des enfants. Sachets de 200 g à 500 g, pratiques et nutritifs.</p>
+    </div>
+    <div class="card">
+      <img src="images/jus_agro.png" alt="Jus naturels">
+      <h3>Jus et boissons</h3>
+      <p>Fabrication locale de jus naturels et boissons innovantes, complétant notre offre agroalimentaire saine et locale.</p>
+    </div>
+  </div>
+</section>
 
-            <div class="about-founder">
-                <img src="images/fondateur.jpg" alt="Fondateur">
-                <h3>Fondateur : Ananias</h3>
-                <p>Expert en innovation technologique et cybersécurité.</p>
-            </div>
-        </section>
+<!-- CONTACT -->
+<section id="contact" class="innovation">
+  <h2>Contactez-nous</h2>
+  <p>Email : contact@k2globalbusiness.com</p>
+  <p>Téléphone : +243 971 866 435</p>
+  <p>Adresse : 34 Rue Gulf, Mont-Ngaliema, Kinshasa, RDC</p>
+</section>
 
+</main>
 
-        <!-- ================= INNOVATION ================= -->
-        <section class="innovation">
-            <h2>Nos Innovations</h2>
-
-            <div class="innovation-cards">
-
-                <div class="card">
-                    <img src="images/carte1.jpg" alt="Innovation 1">
-                    <h3>Développement Web</h3>
-                    <p>Création de sites modernes et sécurisés.</p>
-                </div>
-
-                <div class="card">
-                    <img src="images/carte2.jpg" alt="Innovation 2">
-                    <h3>Énergie Solaire</h3>
-                    <p>Systèmes photovoltaïques intelligents.</p>
-                </div>
-
-                <div class="card">
-                    <img src="images/carte3.jpg" alt="Innovation 3">
-                    <h3>Cybersécurité</h3>
-                    <p>Protection avancée des infrastructures numériques.</p>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-    <footer>
-        © 2025 - Innovation Brilliant | Tous droits réservés
-    </footer>
+<footer>
+© K-2 GLOBAL BUSINESS sarl • Tous droits réservés.
+</footer>
 
 </body>
 </html>
+         
